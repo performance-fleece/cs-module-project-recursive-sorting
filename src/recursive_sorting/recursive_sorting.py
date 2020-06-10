@@ -4,7 +4,26 @@ def merge(arrA, arrB):
     merged_arr = [0] * elements
 
     # Your code here
+    a = b = c = 0
 
+    while a < len(arrA) and b < len(arrB):
+        if arrA[a] < arrB[b]:
+            merged_arr[c] = arrA[a]
+            a += 1
+        else:
+            merged_arr[c] = arrB[b]
+            b += 1
+        c += 1
+
+    while a < len(arrA):
+        merged_arr[c] = arrA[a]
+        a += 1
+        c += 1
+
+    while b < len(arrB):
+        merged_arr[c] = arrB[b]
+        b += 1
+        c += 1
 
     return merged_arr
 
